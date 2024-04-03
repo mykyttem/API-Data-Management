@@ -1,6 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .controllers.receive import receive_router
+
+"""
+    Main settings app:
+        - origins
+        - middleware
+        - include routers
+"""
 
 app = FastAPI()
 
@@ -15,10 +23,8 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"] 
 )
 
 
-@app.get("/", tags=["root"])
-async def read_root() -> dict:
-    return {"message": "Welcome to Management Data"}
+app.include_router(receive_router.router_data, prefix="/receive-data")
