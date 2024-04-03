@@ -1,15 +1,47 @@
-button {
-    background-color: #9dc5f5; 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    cursor: pointer; 
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+}
+
+.userData {
+    display: flex;
+    justify-content: center;
+}
+
+.userInfo {
+    flex: 1;
+}
+
+.userInfo div {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.avatarContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.avatar {
+    width: 350px; 
+    height: auto;
+}
+
+.button {
+    background-color: #9dc5f5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
-    width: 100px; 
-    transition: background-color 0.3s; 
+    width: 100px;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #7ba3d3; 
+    background-color: #7ba3d3;
 }
