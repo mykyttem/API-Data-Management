@@ -4,16 +4,16 @@
     padding: 40px;
 }
 
-.userData {
+.data {
     display: flex;
     justify-content: center;
 }
 
-.userInfo {
+.info {
     flex: 1;
 }
 
-.userInfo div {
+.info div {
     font-size: 20px;
     margin: 5px;
 }
