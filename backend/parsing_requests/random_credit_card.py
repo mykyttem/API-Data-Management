@@ -1,4 +1,4 @@
-from make_request import make_request
+from backend.parsing_requests.utils import make_request
 
 
 def credit_card():
