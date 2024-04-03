@@ -4,29 +4,31 @@ import { fetchData } from "./components/fetch_data";
 import { handleReload } from "./components/reload";
 
 const ReceiveData = () => {
-    const [dataUser, setDataUser] = useState(null);
+    const [data_user, set_data_user] = useState(null);
+    const [is_loading, set_is_loading] = useState(true);
 
     useEffect(() => {
-        fetchData(setDataUser);
+        fetchData(set_data_user, set_is_loading);
     }, []);
 
     return (
         <div className="container">
-            {dataUser && (
+            {is_loading && <div>Loading...</div>}
+            {!is_loading && data_user && (
                 <div className="userData">
                     <div className="userInfo">
-                        {Object.entries(dataUser).map(([key, value]) => (
+                        {Object.entries(data_user).map(([key, value]) => (
                             <div key={key}>
                                 <strong>{key}: </strong> {value}
                             </div>
                         ))}
                     </div>
                     <div className="avatarContainer">
-                        <img className="avatar" src={dataUser.avatar} alt="User Avatar" />
+                        <img className="avatar" src={data_user.avatar} alt="User Avatar" />
                     </div>
                 </div>
             )}
-            <button className="button" onClick={() => handleReload(setDataUser)}>Reload</button>
+            <button className="button" onClick={() => handleReload(set_data_user)}>Reload</button>
         </div>
     );
 };
