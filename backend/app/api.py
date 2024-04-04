@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .controllers.user import user_router
-from .controllers.credit_card import credit_card_router
-from .controllers.bank import bank_router
+from .controllers.routers import user_router, credit_card_router, bank_router, database_router
+
 
 """
     Main settings app:
@@ -33,3 +32,4 @@ app.add_middleware(
 app.include_router(user_router.router_user, prefix="/user")
 app.include_router(credit_card_router.router_credit_card, prefix="/credit-card")
 app.include_router(bank_router.router_bank, prefix="/bank")
+app.include_router(database_router.router_database, prefix="/database")
