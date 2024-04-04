@@ -1,6 +1,6 @@
-import { fetchData } from "../fetch_data";
+import { fetchData } from "../utils/fetch_data";
 
-const handle_save = (data, edit_data, set_data, set_is_editing) => {
+const handle_save_changes = (data, edit_data, set_data, set_is_editing) => {
     // Replace the corresponding fields in saved_data with the edited values from data
     const updated_data = {
         ...data,
@@ -30,7 +30,7 @@ const handle_reload = (set_data_user, set_is_loading) => {
 
 
 export{ 
-    handle_save, 
+    handle_save_changes, 
     handle_cancel, 
     handle_reload 
 };

@@ -29,6 +29,7 @@ app.add_middleware(
 )
 
 
+# routers
 app.include_router(user_router.router_user, prefix="/user")
 app.include_router(credit_card_router.router_credit_card, prefix="/credit-card")
 app.include_router(bank_router.router_bank, prefix="/bank")

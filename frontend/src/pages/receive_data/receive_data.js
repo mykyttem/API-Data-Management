@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchData } from "./components/fetch_data";
+import { fetchData } from "./components/utils/fetch_data";
 import DataDisplay from "./components/data_display";
 import EditForm from "./components/edit/edit";
 import Buttons from "./components/buttons/buttons";
-import { handle_save, handle_cancel, handle_reload } from "./components/buttons/button_handlers";
+import { handle_save_changes, handle_cancel, handle_reload } from "./components/buttons/button_handlers";
 import { handle_edit_button, handle_edit_user, handle_edit_bank, handle_edit_credit_card } from "./components/edit/handlers_edit";
 
 
@@ -51,7 +51,7 @@ const ReceiveData = () => {
                 is_editing={is_editing}
                 handle_reload={() => handle_reload(set_data, set_is_loading)}
                 handle_edit_button={() => handle_edit_button(set_is_editing)}
-                handle_save={() => handle_save(data, edit_data, set_data, set_is_editing)}
+                handle_save_changes={() => handle_save_changes(data, edit_data, set_data, set_is_editing)}
                 handle_cancel={() => handle_cancel(set_is_editing)}
             />  
         </>
