@@ -5,7 +5,7 @@ import DataDisplay from "./components/data_display";
 import EditForm from "./components/edit";
 import Buttons from "./components/buttons";
 import { handle_save, handle_cancel, handle_reload } from "./components/button_handlers";
-
+import { handle_edit_button, handle_edit_user, handle_edit_bank, handle_edit_credit_card } from "./components/handlers_edit";
 
 /**
  * Component responsible for fetching, displaying, editing, and saving user data.
@@ -29,21 +29,6 @@ const ReceiveData = () => {
         }
     }, []);
 
-    const handle_edit = () => {
-        set_is_editing(true);
-    };
-
-    const handle_edit_user = (user_data) => {
-        set_edit_data({...edit_data, user: user_data});
-    };
-    
-    const handle_bank_edit = (bank_data) => {
-        set_edit_data({ ...edit_data, bank: bank_data });
-    };
-    
-    const handle_credit_card_edit = (credit_card_data) => {
-        set_edit_data({ ...edit_data, credit_card: credit_card_data });
-    };
 
     return (
         <>
@@ -54,9 +39,9 @@ const ReceiveData = () => {
                     data={data} 
                     set_edit_data={set_edit_data}
                     edit_data={edit_data}
-                    handle_edit_user={handle_edit_user}
-                    handle_bank_edit={handle_bank_edit} 
-                    handle_credit_card_edit={handle_credit_card_edit} 
+                    handle_edit_user={(userEditData) => handle_edit_user(edit_data, set_edit_data, userEditData)}
+                    handle_edit_bank={(bankEditData) => handle_edit_bank(edit_data, set_edit_data, bankEditData)} 
+                    handle_edit_credit_card={(creditCardEditData) => handle_edit_credit_card(edit_data, set_edit_data, creditCardEditData)} 
                 />
             }
             <Buttons
@@ -64,10 +49,10 @@ const ReceiveData = () => {
                 data={data}
                 is_editing={is_editing}
                 handle_reload={() => handle_reload(set_data, set_is_loading)}
-                handle_edit={handle_edit}
+                handle_edit_button={() => handle_edit_button(set_is_editing)}
                 handle_save={() => handle_save(data, edit_data, set_data, set_is_editing)}
                 handle_cancel={() => handle_cancel(set_is_editing)}
-            />
+            />  
         </>
     );
 };

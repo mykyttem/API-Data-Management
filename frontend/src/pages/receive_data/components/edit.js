@@ -4,7 +4,7 @@ import React from "react";
  * component displays input fields for editing user, bank, and credit card information.
 */
 
-const EditForm = ({ data, set_edit_data, edit_data, handle_edit_user, handle_bank_edit, handle_credit_card_edit }) => {
+const EditForm = ({ data, set_edit_data, edit_data, handle_edit_user, handle_edit_bank, handle_edit_credit_card }) => {
     // handlers for input change
     const handle_user_input_change = (e) => {
         const { name, value } = e.target;
@@ -15,13 +15,13 @@ const EditForm = ({ data, set_edit_data, edit_data, handle_edit_user, handle_ban
     const handle_bank_input_change = (e) => {
         const { name, value } = e.target;
         const updated_bank_data = { ...edit_data.bank, [name]: value };
-        handle_bank_edit(updated_bank_data, set_edit_data); 
+        handle_edit_bank(updated_bank_data, set_edit_data); 
     };
 
     const handle_credit_card_input_change = (e) => {
         const { name, value } = e.target;
         const updated_credit_card_data = { ...edit_data.credit_card, [name]: value };
-        handle_credit_card_edit(updated_credit_card_data, set_edit_data); 
+        handle_edit_credit_card(updated_credit_card_data, set_edit_data); 
     };
 
     return (

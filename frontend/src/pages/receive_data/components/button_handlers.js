@@ -23,7 +23,8 @@ export const handle_cancel = (set_is_editing) => {
 };
 
 export const handle_reload = (set_data_user, set_is_loading) => {
-    localStorage.removeItem("savedData");
+    // delete cookie editing data when reloading
+    localStorage.removeItem("saved_data");
     const saved_data = JSON.parse(localStorage.getItem("saved_data"));
     fetchData(set_data_user, set_is_loading, saved_data);
 };
