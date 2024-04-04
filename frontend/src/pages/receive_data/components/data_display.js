@@ -18,8 +18,8 @@ const DataDisplay = ({ data }) => {
             </div>
 
             <div>
-                <h2>Credit Card Information</h2>
-                {Object.entries(data.credit_card).map(([key, value]) => (
+                <h2>Bank Information</h2>
+                {Object.entries(data.bank).map(([key, value]) => (
                     <div key={key}>
                         <strong>{key}: </strong>
                         <span>{value}</span>
@@ -28,8 +28,8 @@ const DataDisplay = ({ data }) => {
             </div>
 
             <div>
-                <h2>Bank Information</h2>
-                {Object.entries(data.bank).map(([key, value]) => (
+                <h2>Credit Card Information</h2>
+                {Object.entries(data.credit_card).map(([key, value]) => (
                     <div key={key}>
                         <strong>{key}: </strong>
                         <span>{value}</span>

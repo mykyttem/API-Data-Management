@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import { fetchData } from "./components/fetch_data";
 import DataDisplay from "./components/data_display";
-import EditForm from "./components/edit";
-import Buttons from "./components/buttons";
-import { handle_save, handle_cancel, handle_reload } from "./components/button_handlers";
-import { handle_edit_button, handle_edit_user, handle_edit_bank, handle_edit_credit_card } from "./components/handlers_edit";
+import EditForm from "./components/edit/edit";
+import Buttons from "./components/buttons/buttons";
+import { handle_save, handle_cancel, handle_reload } from "./components/buttons/button_handlers";
+import { handle_edit_button, handle_edit_user, handle_edit_bank, handle_edit_credit_card } from "./components/edit/handlers_edit";
+
 
 /**
  * Component responsible for fetching, displaying, editing, and saving user data.
