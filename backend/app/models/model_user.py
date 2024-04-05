@@ -7,7 +7,6 @@ from .model_base import BaseModel
 class Users(BaseModel):
     __tablename__ = "users"
 
-    password = Column(String)
     first_name = Column(String)
     last_name = Column(String)
     username = Column(String, unique=True)
@@ -15,6 +14,8 @@ class Users(BaseModel):
     avatar = Column(String)
     gender = Column(String)
     phone_number = Column(String)
+    password = Column(String)
+    address = Column(String)
     social_insurance_number = Column(Integer)
     date_of_birth = Column(String)
 
