@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from parsing_requests.random_user import user
+from ..controllers.parsing_requests.random_user import user
 
 
 router_user = APIRouter()

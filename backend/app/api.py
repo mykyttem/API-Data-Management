@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .controllers.routers import user_router, credit_card_router, bank_router, database_router
+from .routers import user_router, credit_card_router, bank_router, database_router
 
 
 """

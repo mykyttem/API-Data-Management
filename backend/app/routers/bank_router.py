@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from parsing_requests.random_bank import bank
+from ..controllers.parsing_requests.random_bank import bank
 
 
 router_bank = APIRouter()
