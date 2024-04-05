@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchData } from "./components/utils/fetch_data";
+import { fetchData } from "./utils/fetch_data";
 import DataDisplay from "./components/data_display";
 import EditForm from "./components/edit/edit";
 import Buttons from "./components/buttons/buttons";
@@ -25,7 +25,7 @@ const ReceiveData = () => {
         if (saved_data) {
             set_data(saved_data);
             set_is_loading(false);  
-        } else {
+        } else {    
             fetchData(set_data, set_is_loading);
         }
     }, []);

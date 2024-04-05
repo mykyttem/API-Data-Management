@@ -1,5 +1,5 @@
 import React from "react";
-import { save_data } from "../utils/save_data";
+import { save_data } from "../../utils/save_data"
 
 
 const Buttons = ({ is_loading, data, is_editing, handle_reload, handle_edit_button, handle_save_changes, handle_cancel }) => {

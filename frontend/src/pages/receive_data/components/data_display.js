@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/styles.css";
+import "../../css/receive_data.css";
 
-const DataDisplay = ({ data }) => {
+const DataDisplay = ({data}) => {
     return (
         <div className="data">
             <div>

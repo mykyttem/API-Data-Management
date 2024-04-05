@@ -1,4 +1,4 @@
-import { fetchData } from "../utils/fetch_data";
+import { fetchData } from "../../utils/fetch_data";
 
 const handle_save_changes = (data, edit_data, set_data, set_is_editing) => {
     // Replace the corresponding fields in saved_data with the edited values from data

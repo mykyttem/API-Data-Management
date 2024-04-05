@@ -1,0 +1,38 @@
+.data-display {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.user-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.info-blocks {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.info-block {
+    flex: 2;
+    margin-right: 10px; 
+}
+
+.info-block:last-child {
+    margin-right: 0; 
+}
+
+.info-block h3 {
+    margin-top: 0;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+}
