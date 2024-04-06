@@ -1,11 +1,11 @@
 from sqlalchemy import delete
 from sqlalchemy.exc import SQLAlchemyError
 
-from ..database.db import engine
+from ...database.db import engine
 
-from ..models.model_user import Users
-from ..models.model_bank import Banks
-from ..models.model_credit_card import CreditCards
+from ...models.model_user import Users
+from ...models.model_bank import Banks
+from ...models.model_credit_card import CreditCards
 
 
 async def delete_user_db(id_user):

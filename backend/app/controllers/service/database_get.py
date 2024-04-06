@@ -1,8 +1,8 @@
 from sqlalchemy import select
 from sqlalchemy.exc import SQLAlchemyError
 
-from ..database.db import engine
-from ..models import Users, Banks, CreditCards
+from ...database.db import engine
+from ...models import Users, Banks, CreditCards
 
 
 async def get_data_database():
