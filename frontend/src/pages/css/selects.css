@@ -1,4 +1,4 @@
-.select {
+.select, .select-sort {
     background-color: #9dc5f5;
     color: white;
     border: none;
@@ -11,9 +11,16 @@
     transition: background-color 0.3s;
     position: absolute;
     top: 50px;
+}
+
+.select {
     left: 460px; 
 }
 
-.select:hover {
+.select-sort { 
+    left: 680px; 
+}
+
+.select:hover, .select-sort:hover {
     background-color: #7ba3d3;
 }
