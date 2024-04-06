@@ -1,5 +1,6 @@
 import React from "react";
 import "../../css/receive_data.css";
+import "../../css/buttons.css";
 
 const DataDisplay = ({data}) => {
     return (

@@ -9,6 +9,7 @@ import axios from "axios";
 
 const format_user_data = (user_data) => {
     return {
+        id: user_data.id,
         first_name: user_data.first_name,
         last_name: user_data.last_name,
         username: user_data.username,

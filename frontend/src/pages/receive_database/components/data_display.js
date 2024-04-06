@@ -1,24 +1,22 @@
 import React from "react";
 import "../../css/receive_database.css";
 
+
 const DataDisplay = ({ data }) => {
     const format_key = (key) => {
         return key.replace(/_/g, " ").toUpperCase();
     };
 
-    if (!data || !data.user || data.user.length === 0) {
-        return <div>No data available</div>;
-    }
 
     return (
         <div className="data-display">
             <h1>Data from database</h1>
-            <h2>Sort by</h2>
 
             <div className="user-grid">
                 {data.user.map((user, index) => (
                     <div key={index} className="user-item">
                         <h2>User {index + 1}</h2>
+                        
                         <div className="info-blocks">
                             <div className="info-block">
                                 <h3>User Info</h3>
