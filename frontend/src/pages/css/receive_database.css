@@ -36,3 +36,41 @@
     width: 100px;
     height: 100px;
 }
+
+.select, .select-sort, .button-form-edit  {
+    background-color: #9dc5f5;
+    color: white;
+    border: none;
+    padding: 10px 7px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 200px; 
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50px;
+}
+
+.select {
+    left: 460px; 
+}
+
+.select-sort { 
+    left: 680px; 
+}
+
+.select:hover, .select-sort:hover {
+    background-color: #7ba3d3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative; 
+    margin-bottom: 2px;
+}
+
+.button-form-edit {
+    margin: 5px 5px;
+}

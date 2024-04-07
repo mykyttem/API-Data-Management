@@ -1,4 +1,4 @@
-.button, .button-delete {
+button, .button-delete {
     background-color: #9dc5f5;
     color: white;
     border: none;
@@ -11,7 +11,7 @@
     transition: background-color 0.3s;
 }
 
-.button:hover, .button-delete:hover {
+button:hover, .button-delete:hover {
     background-color: #7ba3d3;
 }
 
