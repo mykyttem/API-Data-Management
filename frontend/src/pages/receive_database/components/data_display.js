@@ -1,13 +1,9 @@
 import React from "react";
 import { handle_edit_button } from "./edit/edit_button_handlers";
+import { format_key } from "./format_data";
 
 
 const DataDisplay = ({ data, set_edit_data, set_is_editing }) => {
-    const format_key = (key) => {
-        return key.replace(/_/g, " ").toUpperCase();
-    };
-
-    
     return (        
         <>
             {data.map((user, index) => (

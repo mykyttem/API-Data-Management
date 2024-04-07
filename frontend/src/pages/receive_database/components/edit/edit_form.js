@@ -1,15 +1,11 @@
 import React from "react";
+import { format_key } from "../format_data";
+
 
 const EditFormDatabase = ({ edit_data, handle_user_input_change, handle_bank_input_change, handle_credit_card_input_change }) => {
-    const format_key = (key) => {
-        return key.replace(/_/g, " ").toUpperCase();
-    };
-
-
     return (
         <>
             <div className="user-item">
-                <h2>User</h2>
                 <div className="info-blocks">
                     <div className="info-block">
                         <h3>User Info</h3>

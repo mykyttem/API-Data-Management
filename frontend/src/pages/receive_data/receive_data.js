@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchData } from "./utils/fetch_data";
+import "../css/receive_data.css";
+import "../css/buttons.css";
+import "../css/inputs.css";
+
 import DataDisplay from "./components/data_display";
-import EditForm from "./components/edit/edit";
+import EditForm from "./components/edit";
 import Buttons from "./components/buttons/buttons";
-import { handle_save_changes, handle_cancel, handle_reload } from "./components/buttons/button_handlers";
-import { handle_edit_button, handle_edit_user, handle_edit_bank, handle_edit_credit_card } from "./components/edit/handlers_edit";
+
+import { fetchData } from "./utils/fetch_data";
+
+import { handle_edit_button, handle_save_changes, handle_reload } from "./components/buttons/button_handlers";
+import { handle_user_input_change, handle_bank_input_change, handle_credit_card_input_change } from "../edit_form_data/edit_input_change";
+import { handle_cancel } from "../edit_form_data/edit_buttons";
 
 
 /**
@@ -32,29 +39,29 @@ const ReceiveData = () => {
 
 
     return (
-        <>
-            {is_loading && <div>Loading...</div>}
-            {!is_loading && data && !is_editing && <DataDisplay data={data} />}
-            {!is_loading && data && is_editing && 
-                <EditForm 
-                    data={data} 
-                    set_edit_data={set_edit_data}
-                    edit_data={edit_data}
-                    handle_edit_user={(userEditData) => handle_edit_user(edit_data, set_edit_data, userEditData)}
-                    handle_edit_bank={(bankEditData) => handle_edit_bank(edit_data, set_edit_data, bankEditData)} 
-                    handle_edit_credit_card={(creditCardEditData) => handle_edit_credit_card(edit_data, set_edit_data, creditCardEditData)} 
-                />
-            }
-            <Buttons
-                is_loading={is_loading}
-                data={data}
-                is_editing={is_editing}
-                handle_reload={() => handle_reload(set_data, set_is_loading)}
-                handle_edit_button={() => handle_edit_button(set_is_editing)}
-                handle_save_changes={() => handle_save_changes(data, edit_data, set_data, set_is_editing)}
-                handle_cancel={() => handle_cancel(set_is_editing)}
-            />  
-        </>
+        <div className="data">
+            <div>
+                {is_loading && <h2>Loading...</h2>}
+                {!is_loading && data && !is_editing && <DataDisplay data={data} />}
+                {!is_loading && data && is_editing && 
+                    <EditForm 
+                        data={data}
+                        handle_user_input_change={(e) => handle_user_input_change(e, set_edit_data, edit_data)}
+                        handle_bank_input_change={(e) => handle_bank_input_change(e, set_edit_data, edit_data)}
+                        handle_credit_card_input_change={(e) => handle_credit_card_input_change(e, set_edit_data, edit_data)}
+                    />
+                }
+                <Buttons
+                    is_loading={is_loading}
+                    data={data}
+                    is_editing={is_editing}
+                    handle_reload={() => handle_reload(set_data, set_is_loading)}
+                    handle_edit_button={() => handle_edit_button(set_is_editing)}
+                    handle_save_changes={() => handle_save_changes(data, edit_data, set_data, set_is_editing)}
+                    handle_cancel={() => handle_cancel(set_is_editing)}
+                    />  
+            </div>
+        </div>
     );
 };
 

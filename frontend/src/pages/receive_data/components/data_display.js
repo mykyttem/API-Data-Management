@@ -4,7 +4,7 @@ import "../../css/buttons.css";
 
 const DataDisplay = ({data}) => {
     return (
-        <div className="data">
+        <> 
             <div>
                 <h2>User Information</h2>
                 {Object.entries(data.user).map(([key, value]) => (
@@ -37,7 +37,7 @@ const DataDisplay = ({data}) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </>
     );
 };
 

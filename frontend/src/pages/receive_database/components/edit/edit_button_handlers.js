@@ -4,12 +4,6 @@ const handle_edit_button = (user, set_edit_data, set_is_editing) => {
 };
 
 
-const handle_cancel = (set_is_editing) => {
-    set_is_editing(false);
-};
-
-
 export{ 
-    handle_edit_button,
-    handle_cancel, 
+    handle_edit_button
 };

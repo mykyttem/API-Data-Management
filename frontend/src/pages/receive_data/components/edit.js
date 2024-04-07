@@ -4,28 +4,9 @@ import React from "react";
  * component displays input fields for editing user, bank, and credit card information.
 */
 
-const EditForm = ({ data, set_edit_data, edit_data, handle_edit_user, handle_edit_bank, handle_edit_credit_card }) => {
-    // handlers for input change
-    const handle_user_input_change = (e) => {
-        const { name, value } = e.target;
-        const updated_user_data = { ...edit_data.user, [name]: value };
-        handle_edit_user(updated_user_data, set_edit_data); 
-    };    
-
-    const handle_bank_input_change = (e) => {
-        const { name, value } = e.target;
-        const updated_bank_data = { ...edit_data.bank, [name]: value };
-        handle_edit_bank(updated_bank_data, set_edit_data); 
-    };
-
-    const handle_credit_card_input_change = (e) => {
-        const { name, value } = e.target;
-        const updated_credit_card_data = { ...edit_data.credit_card, [name]: value };
-        handle_edit_credit_card(updated_credit_card_data, set_edit_data); 
-    };
-
+const EditForm = ({ data, handle_user_input_change, handle_bank_input_change, handle_credit_card_input_change }) => {
     return (
-        <div className="data">
+        <>  
             <div>
                 <h2>User Information</h2>
                 {data.user && Object.keys(data.user).map(key => (
@@ -71,7 +52,7 @@ const EditForm = ({ data, set_edit_data, edit_data, handle_edit_user, handle_edi
                     </div>
                 ))}
             </div>
-        </div>
+        </>
     );
 };
 

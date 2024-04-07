@@ -1,5 +1,9 @@
 import { fetchData } from "../../utils/fetch_data";
 
+const handle_edit_button = (set_is_editing) => {
+    set_is_editing(true);
+};
+
 const handle_save_changes = (data, edit_data, set_data, set_is_editing) => {
     // Replace the corresponding fields in saved_data with the edited values from data
     const updated_data = {
@@ -17,9 +21,6 @@ const handle_save_changes = (data, edit_data, set_data, set_is_editing) => {
     set_is_editing(false);
 };
 
-const handle_cancel = (set_is_editing) => {
-    set_is_editing(false);
-};
 
 const handle_reload = (set_data_user, set_is_loading) => {
     // delete cookie editing data when reloading
@@ -31,6 +32,6 @@ const handle_reload = (set_data_user, set_is_loading) => {
 
 export{ 
     handle_save_changes, 
-    handle_cancel, 
+    handle_edit_button, 
     handle_reload 
 };
