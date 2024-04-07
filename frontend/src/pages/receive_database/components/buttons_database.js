@@ -7,9 +7,10 @@ import { download_csv } from "../utils/save_csv";
 const ButtonsDatabase = ({ data, set_data, edit_data, set_is_loading, is_editing, set_is_editing, selected_user_id }) => {
     return (
         <>
+        {console.log(selected_user_id)}
             {!is_editing && (
                 <>
-                    <button className="button-delete" onClick={() => delete_user(selected_user_id, set_is_loading,set_data)}>Delete user</button>
+                    <button className="button-delete" onClick={() => delete_user(selected_user_id, set_is_loading, set_data)}>Delete user</button>
                     <button className="button-save-csv" onClick={() => download_csv(data)}>Save csv</button> 
                 </>
             )}

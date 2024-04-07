@@ -80,7 +80,8 @@ const ReceiveDataBase = () => {
                                 />
                                 <SelectIdUser 
                                     user_ids={user_ids} 
-                                    set_selected_user_id={() => set_selected_user_id} handle_user_id_change={() => handle_user_id_change(set_selected_user_id)} 
+                                    selected_user_id={selected_user_id}
+                                    handle_user_id_change={() => handle_user_id_change(set_selected_user_id)}
                                 />
                             </>
                         )}
