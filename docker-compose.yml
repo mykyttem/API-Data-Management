@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks:
+  my-network:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+    - my-network
+
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+    - my-network
