@@ -7,9 +7,9 @@ networks:
 services:
   backend:
     build:
-      context: ./backend/
+      context: ./backend/`
       dockerfile: ./Dockerfile
-    restart: always
+    command: bash -c "cd alembic && alembic revision --autogenerate -m 'init' && python -m alembic upgrade head"
     ports:
       - 8000:8000
     networks:
@@ -19,7 +19,6 @@ services:
     build:
       context: ./frontend/
       dockerfile: ./Dockerfile
-    restart: always
     ports:
       - 3000:3000
     networks:
