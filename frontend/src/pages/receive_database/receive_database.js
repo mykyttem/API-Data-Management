@@ -64,6 +64,7 @@ const ReceiveDataBase = () => {
                                 set_is_editing={set_is_editing}
                         />}
                         <ButtonsDatabase
+                            data={data}
                             set_data={set_data}
                             edit_data={edit_data}
                             set_is_loading={set_is_loading}
