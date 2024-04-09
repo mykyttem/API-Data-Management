@@ -1,6 +1,8 @@
 from sqlalchemy import delete
 from sqlalchemy.exc import SQLAlchemyError
 
+from ...logg import logger
+
 from ..database.db import engine
 from ..models.model_user import Users
 from ..models.model_bank import Banks
@@ -31,4 +33,4 @@ async def delete_user_db(id_user):
             # Committing the transaction
             await conn.commit()
     except SQLAlchemyError as e:
-        print(f"Error deleting user data: {e}")
+        logger.error(f"deleting user data: {e}")

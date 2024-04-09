@@ -1,5 +1,7 @@
 from sqlalchemy.exc import SQLAlchemyError
 
+from ...logg import logger
+
 from ..database.db import async_session
 from ..models.model_user import Users
 from ..models.model_bank import Banks
@@ -41,5 +43,5 @@ async def save_data_db(data):
                 session.add(credit_card)
                 await session.commit()
     except SQLAlchemyError as e:
-        print(f"Error saving data: {e}")
+        logger.error(f"saving data: {e}")
         raise

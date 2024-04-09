@@ -1,6 +1,8 @@
 from sqlalchemy import select
 from sqlalchemy.exc import SQLAlchemyError
 
+from ...logg import logger
+
 from ..database.db import engine
 from ..models import Users, Banks, CreditCards
 
@@ -37,5 +39,5 @@ async def get_data_database():
 
             return {"users": data_users_dicts}
     except SQLAlchemyError as e:
-        print(f"Error getting all users: {e}")
+        logger.error(f"getting all users: {e}")
         raise

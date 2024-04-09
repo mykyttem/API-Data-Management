@@ -1,5 +1,7 @@
 from sqlalchemy.exc import SQLAlchemyError
 
+from ...logg import logger
+
 from ..database.db import async_session
 from ..models.model_user import Users
 from ..models.model_bank import Banks
@@ -40,5 +42,5 @@ async def update_data_db(data):
 
                 await session.commit()
     except SQLAlchemyError as e:
-        print(f"Error updating data: {e}")
+        logger.error(f"updating data: {e}")
         raise
