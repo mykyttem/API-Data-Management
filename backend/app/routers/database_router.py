@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Request, HTTPException
 
-from ..controllers.service.database_get import get_data_database
-from ..controllers.service.database_save import save_data_db
-from ..controllers.service.database_delete import delete_user_db
-from ..controllers.service.database_update import update_data_db
+from ..controllers.get import get_data_database
+from ..controllers.save import save_data_db
+from ..controllers.delete import delete_user_db
+from ..controllers.update import update_data_db
 
 
 router_database = APIRouter()

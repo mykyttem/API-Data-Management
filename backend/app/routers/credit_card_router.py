@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..controllers.parsing_requests.random_credit_card import credit_card
+from ..parsing_requests.random_credit_card import credit_card
 
 
 router_credit_card = APIRouter()

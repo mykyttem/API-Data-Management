@@ -1,10 +1,10 @@
 from sqlalchemy.exc import SQLAlchemyError
 
-from ...database.db import async_session
+from ..database.db import async_session
 
-from ...models.model_user import Users
-from ...models.model_bank import Banks
-from ...models.model_credit_card import CreditCards
+from ..models.model_user import Users
+from ..models.model_bank import Banks
+from ..models.model_credit_card import CreditCards
 
 
 async def save_data_db(data):
