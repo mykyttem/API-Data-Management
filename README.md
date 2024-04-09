@@ -21,13 +21,26 @@ Docker Compose setup for launching the application including frontend, backend, 
 - docker
 
 ## Installation and Setup
-
+### the first way
 1. `git clone <repository_url>`
 2. `docker-compose up`
 3. Open http://localhost:3000 to view it in your browser.
 
-## Technologies Used
+### The second way
+2. open first terminal, and second
+3. first `cd backend`
+3.1. `python -m venv venv`
+3.2. `venv/Scripts/activate`
+3.3. `cd alemibc` Make migrations `alembic alembic revision --autogenerate -m "init"`, and `alembic upgrade head`
+3.4. `cd ..` 
+3.5 `python main.py`
 
+4. second `cd frontend`
+4.1. `npm install`
+4.2 `npm start`
+
+
+## Technologies Used
 - Frontend: React 
 - Backend: FastAPI 
 - Migrations: Alembic
