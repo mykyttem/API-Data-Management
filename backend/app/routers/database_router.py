@@ -9,7 +9,7 @@ from ..controllers.service.database_update import update_data_db
 router_database = APIRouter()
 
 
-@router_database.post("/", tags=["database"])
+@router_database.post("", tags=["database"])
 async def post_db_save_data(request: Request):
     data = await request.json()  
     return await save_data_db(data)  
