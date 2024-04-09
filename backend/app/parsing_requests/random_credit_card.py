@@ -6,5 +6,5 @@ def credit_card():
 
     credit_card_data = make_request(url)
     credit_card_data.pop("id", None)
-    
+
     return credit_card_data

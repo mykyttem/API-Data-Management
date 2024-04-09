@@ -1,6 +1,6 @@
 from sqlalchemy.orm import declarative_base
 
-Base = declarative_base() 
+Base = declarative_base()
 
 from .model_user import Users
 from .model_bank import Banks

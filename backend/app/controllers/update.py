@@ -1,30 +1,37 @@
 from sqlalchemy.exc import SQLAlchemyError
 
 from ..database.db import async_session
-
 from ..models.model_user import Users
 from ..models.model_bank import Banks
 from ..models.model_credit_card import CreditCards
 
 
 async def update_data_db(data):
+    """
+    Updates data in the database.
+
+    Args:
+        data (dict): A dictionary containing data to be updated.
+            It should have the following keys:
+            - 'user': A dictionary representing user data to be updated.
+            - 'bank': A dictionary representing bank data to be updated.
+            - 'credit_card': A dictionary representing credit card data to be updated.
+    """
     try:
         async with async_session() as session:
             async with session.begin():
-                #  loading a user from the database by his id
+                # Loading a user from the database by their id
                 user = await session.get(Users, data["user"]["id"])
- 
-                # update user values with new data
+
+                # Update user values with new data
                 for key, value in data["user"].items():
                     setattr(user, key, value)
 
-                # loading a bank and credit card by user id
-  
+                # Loading a bank and credit card by user id
                 bank = await session.get(Banks, user.id)
                 credit_card = await session.get(CreditCards, user.id)
 
-                # update bank and credit card information
-  
+                # Update bank and credit card information
                 for key, value in data["bank"].items():
                     setattr(bank, key, value)
 
@@ -33,5 +40,5 @@ async def update_data_db(data):
 
                 await session.commit()
     except SQLAlchemyError as e:
-        print(f"Error update data: {e}")
+        print(f"Error updating data: {e}")
         raise

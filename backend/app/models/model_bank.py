@@ -3,7 +3,7 @@ from .model_base import BaseModel
 
 
 class Banks(BaseModel):
-    __tablename__ = "banks"  
+    __tablename__ = "banks"
 
     account_number = Column(Integer)
     iban = Column(String)
@@ -11,4 +11,4 @@ class Banks(BaseModel):
     routing_number = Column(Integer)
     swift_bic = Column(String)
 
-    user_id = Column(Integer, ForeignKey('users.id'), index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True)

@@ -5,7 +5,7 @@ from .model_base import BaseModel
 
 
 class Users(BaseModel):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     first_name = Column(String)
     last_name = Column(String)
@@ -19,12 +19,12 @@ class Users(BaseModel):
     date_of_birth = Column(String)
 
     credit_cards = relationship(
-        "CreditCards", 
-        backref='users',
-        cascade="all, delete-orphan",  
+        "CreditCards",
+        backref="users",
+        cascade="all, delete-orphan",
     )
     banks = relationship(
-        "Banks", 
-        backref='users',
-        cascade="all, delete-orphan", 
+        "Banks",
+        backref="users",
+        cascade="all, delete-orphan",
     )

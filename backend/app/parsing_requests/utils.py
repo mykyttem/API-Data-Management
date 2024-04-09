@@ -1,6 +1,7 @@
 import requests
 import time
 
+
 def make_request(url):
     try:
         response = requests.get(url)
@@ -8,8 +9,8 @@ def make_request(url):
             return response.json()
         elif response.status_code == 429:
             print("Too many requests. Retrying after 2 seconds...")
-            time.sleep(2) 
-            return make_request(url)  
+            time.sleep(2)
+            return make_request(url)
         else:
             raise Exception(f"Non-success status code: {response.status_code}")
     except Exception as e:

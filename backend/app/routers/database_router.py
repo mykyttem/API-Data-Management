@@ -11,8 +11,8 @@ router_database = APIRouter()
 
 @router_database.post("", tags=["database"])
 async def post_db_save_data(request: Request):
-    data = await request.json()  
-    return await save_data_db(data)  
+    data = await request.json()
+    return await save_data_db(data)
 
 
 @router_database.get("/get", tags=["database"])
@@ -22,8 +22,8 @@ async def get_database() -> dict:
         return users
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
-    
+
+
 @router_database.post("/delete-user", tags=["database"])
 async def delete_user_database(request: Request):
     try:
@@ -31,7 +31,7 @@ async def delete_user_database(request: Request):
         return await delete_user_db(id_user)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
 
 @router_database.post("/update-user", tags=["database"])
 async def update_database(request: Request):
